@@ -5,7 +5,7 @@ import time
 now = time.strftime("%b %d, %Y %H:%M:%S")
 print("It is", now)
 while True:
-    user_action = input('Type add, show, edit, complete or exit: ')
+    user_action = input("Type add, show, edit, complete or exit: ")
     user_action = user_action.strip()
 
     if user_action.startswith('add'):
@@ -33,12 +33,12 @@ while True:
 
             todos = functions.get_todos()
 
-            new_todo = input('Enter new todo: ')
+            new_todo = input("Enter new todo: ")
             todos[number] = new_todo + '\n'
 
             functions.write_todos(todos)
         except ValueError:
-            print('Your command is not valid.')
+            print("Your command is not valid.")
             continue
 
     elif user_action.startswith('complete'):
@@ -55,10 +55,10 @@ while True:
             message = f"Todo {todo_to_remove} was removed from the list."
             print(message)
         except IndexError:
-            print('There is no item with that number.')
+            print("There is no item with that number.")
             continue
     elif user_action.startswith('exit'):
         break
     else:
         print("Command is not valid!")
-print('Bye!')
+print("Bye!")
